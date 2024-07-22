@@ -1,8 +1,11 @@
+import './App.css'
+import TodoWrapper from './components/Todowrapper'
+
 function App() {
 
   return (
     <>
-      Hello world
+      <TodoWrapper />
     </>
   )
 }
