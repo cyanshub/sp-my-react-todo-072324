@@ -23,3 +23,30 @@ body {
   margin-top: 20px;
   text-align: center;
 }
+
+.create-form {
+  height: 40px;
+  width: 100%;
+  margin: 25px 0px;
+  border: 1px solid #5194bb;
+  display: flex;
+}
+
+.create-form > input {
+  outline: none;
+  border: none;
+  background: none;
+  color: white;
+  width: 100%;  /* 盡量讓放大文字 */
+  height: 100%; /* 盡量讓放大文字 */
+  padding-left: 10px;
+}
+
+.create-form > button {
+  border: none;
+  background-color: #5194bb;
+  color: white;
+  width: 50px;
+  height: 100%;
+  cursor: pointer;
+}
