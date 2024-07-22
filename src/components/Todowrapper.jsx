@@ -5,8 +5,18 @@ import Todo from "./Todo";
 function TodoWrapper() {
   // 通常會使用資料庫的資料, 這邊只是示範資料
   const [todos, setTodos] = useState([
-    { content: "打掃廁所", id: Math.random(), isCompleted: false },
-    { content: "寫作業", id: Math.random(), isCompleted: false },
+    {
+      content: "去慢跑",
+      id: Math.random(),
+      isCompleted: false,
+      isEditing: false,
+    },
+    {
+      content: "整理筆記",
+      id: Math.random(),
+      isCompleted: false,
+      isEditing: false,
+    },
   ]);
 
   const addTodo = (content) => {
@@ -30,13 +40,40 @@ function TodoWrapper() {
     );
   };
 
+  const toggleEditing = (id) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, isEditing: !todo.isEditing } : todo
+      )
+    );
+  };
+
+  const editTodo = (id, newContent) => {
+    setTodos(
+      todos.map((todo) => {
+        return todo.id === id
+          ? { ...todo, content: newContent, isEditing: false }
+          : todo;
+      })
+    );
+  };
+
   return (
     <>
       <div className="wrapper">
         <h1>待辦事項</h1>
         <CreateForm addTodo={addTodo} />
         {todos.map((todo) => {
-          return <Todo key={todo.id} todo={todo} deleteTodo={deleteTodo} toggleCompleted={toggleCompleted}/>;
+          return (
+            <Todo
+              key={todo.id}
+              todo={todo}
+              deleteTodo={deleteTodo}
+              toggleCompleted={toggleCompleted}
+              toggleEditing={toggleEditing}
+              editTodo={editTodo}
+            />
+          );
         })}
       </div>
     </>

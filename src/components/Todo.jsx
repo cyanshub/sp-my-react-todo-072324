@@ -1,7 +1,10 @@
 import { MdDelete, MdEdit } from "react-icons/md";
+import EditForm from "./EditForm";
 
-function Todo({ todo, deleteTodo, toggleCompleted }) {
-  return (
+function Todo({ todo, deleteTodo, toggleCompleted, toggleEditing, editTodo }) {
+  return todo.isEditing ? (
+    <EditForm todo={todo} editTodo={editTodo} />
+  ) : (
     <div className={`todo ${todo.isCompleted ? "completed" : ""}`}>
       <p
         onClick={() => {
@@ -12,7 +15,12 @@ function Todo({ todo, deleteTodo, toggleCompleted }) {
         {todo.content}
       </p>
       <div>
-        <MdEdit style={{ cursor: "pointer" }} />
+        <MdEdit
+          onClick={() => {
+            toggleEditing(todo.id);
+          }}
+          style={{ cursor: "pointer" }}
+        />
         <MdDelete
           onClick={() => {
             deleteTodo(todo.id);
