@@ -14,13 +14,21 @@ function TodoWrapper() {
     setTodos([...todos, { content, id: Math.random() }]);
   };
 
+  const deleteTodo = (id) => {
+    setTodos(
+      todos.filter((todo) => {
+        return todo.id !== id;
+      })
+    );
+  };
+
   return (
     <>
       <div className="wrapper">
         <h1>待辦事項</h1>
         <CreateForm addTodo={addTodo} />
         {todos.map((todo) => {
-          return <Todo key={todo.id} todo={todo.content} />;
+          return <Todo key={todo.id} todo={todo.content} deleteTodo={deleteTodo} />;
         })}
       </div>
     </>
