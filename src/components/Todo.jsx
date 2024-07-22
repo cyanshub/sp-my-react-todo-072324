@@ -1,9 +1,16 @@
 import { MdDelete, MdEdit } from "react-icons/md";
 
-function Todo({ todo, deleteTodo }) {
+function Todo({ todo, deleteTodo, toggleCompleted }) {
   return (
-    <div className="todo">
-      <p>{todo.content}</p>
+    <div className={`todo ${todo.isCompleted ? "completed" : ""}`}>
+      <p
+        onClick={() => {
+          toggleCompleted(todo.id);
+        }}
+        style={{ cursor: "pointer" }}
+      >
+        {todo.content}
+      </p>
       <div>
         <MdEdit style={{ cursor: "pointer" }} />
         <MdDelete
