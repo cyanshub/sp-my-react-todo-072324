@@ -28,7 +28,7 @@ function TodoWrapper() {
         <h1>待辦事項</h1>
         <CreateForm addTodo={addTodo} />
         {todos.map((todo) => {
-          return <Todo key={todo.id} todo={todo.content} deleteTodo={deleteTodo} />;
+          return <Todo key={todo.id} todo={todo} deleteTodo={deleteTodo} />;
         })}
       </div>
     </>
