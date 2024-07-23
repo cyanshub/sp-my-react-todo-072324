@@ -3,7 +3,7 @@
 ![導覽圖片](public/readme/introduce.png)
 
 ## 介紹
-+ 這是使用 React 前端框架完成 todo-list 專案
++ 這是使用 React 前端框架完成的專案
 + 使用者可以新增待辦事項
 + 點擊待每筆辦事項的文字時, 可切換完成/未完成
 + 點擊待辦事項的編輯圖示, 可以編輯該筆資料
@@ -16,7 +16,7 @@
 + 使用 form 的 onSubmit 屬性, 當偵測 btn:submit 被點擊時觸發回調函數
 + 設計 toggle 函數, 切換資料的屬性值, 以此變換不同樣式或調用不同組件
 +	使用第三方 icon 套件: react-icons
-+ 使用 style-components 套件定義元素樣式、組件樣式、ThemeProvider主題、createGlobalStyle全局樣式
++ 使用 style-components 套件定義元素樣式、組件樣式、ThemeProvider 主題、createGlobalStyle 全局樣式
 
 
 ## 開發工具
