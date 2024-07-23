@@ -23,7 +23,9 @@
 + react: 18.2.0
 + react-dom: 18.2.0
 + react-icons: 5.2.1
++ react-router-dom: 6.25.1
 + styled-components: 6.1.12
++ gh-pages: 4.0.0
 
 
 ## 使用 Vite
